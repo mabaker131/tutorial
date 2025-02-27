@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro'
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
 const pageTitle = "BakerEdTech";
 ---
 
@@ -13,9 +15,10 @@ const pageTitle = "BakerEdTech";
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<Navigation />
+		<Header />
 		<h1>{pageTitle}</h1>
 		<h2>I'm working on making a website</h2>
 		<img src="https://i.kym-cdn.com/entries/icons/original/000/008/342/ihave.jpg" alt="Dog in a science lab" style="max-width: 100%; height: auto;" />
+		<Footer />
 	</body>
 </html>
