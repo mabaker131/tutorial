@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Navigation from '../components/Navigation.astro'
 
 const pageTitle = "About Me";
 const identity = {
@@ -43,9 +44,7 @@ const textCase = "uppercase";
           </style>
 	</head>
 	<body>
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/blog/">Blog</a>
+        <Navigation />
 		<h1>{pageTitle}</h1>
         <h2>I'm working on making a website</h2>
         <p>I want to showcase some of the things I've worked on in my roll as an educator and tech coordinator.</p>
