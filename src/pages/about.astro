@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Navigation from '../components/Navigation.astro'
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 const pageTitle = "About Me";
 const identity = {
@@ -33,22 +34,20 @@ const textCase = "uppercase";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
-        <style define:vars={{skillColor, fontWeight, textCase}}>
-            h1 {
-              color: purple;
-              font-size: 4rem;
-            }
-            .skill {
-              color: var(--skillColor);
-              font-weight: var(--fontWeight);
-              text-transform: var(--textCase);
-            }
-          </style>
 	</head>
 	<body>
-        <Header />
-		<h1>{pageTitle}</h1>
-        <h2>I'm working on making a website</h2>
+    <style is:global define:vars={{skillColor, fontWeight, textCase}}>
+      h1 {
+        color: purple;
+        font-size: 4rem;
+      }
+      .skill {
+        color: var(--skillColor);
+        font-weight: var(--fontWeight);
+        text-transform: var(--textCase);
+      }
+    </style>
+    <BaseLayout pageTitle={pageTitle}>
         <p>I want to showcase some of the things I've worked on in my roll as an educator and tech coordinator.</p>
         <p>I really like spreadsheets.</p>
         <p>Here are a few facts about me:</p>
@@ -65,9 +64,6 @@ const textCase = "uppercase";
             </ul>
         <p>Am I happy? {happy ? "Yes" : "No"}</p>
         {happy && <p>I am happy to be learning Astro!</p>}
-      <Footer />
-      <script>
-        import "../scripts/menu.js";
-      </script>
+      </BaseLayout>
 	</body>
 </html>
