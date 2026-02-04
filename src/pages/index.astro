@@ -1,8 +1,20 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Home";
+// 1. Import the Image component from Astro
+import { Image } from 'astro:assets';
+
+// 2. Import your specific image file
+// (Note: The variable 'projectScreenshot' now holds metadata about the image)
+import sciencerules from '../assets/science rules.png';
 ---
 <BaseLayout pageTitle={pageTitle}>
 	<h2>My awesome blog subtitle</h2>
+	<Image 
+      src={sciencerules} 
+      alt="when static electricity meets youthful hair"
+      width={800}
+	  class="std-img"
+    />
 	<h3>ReRun!</h3>
 </BaseLayout>
